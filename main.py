@@ -9,22 +9,21 @@ def countdown(t: int):
     print("Iniciando contagem regressiva...")
     while t >= 0:
         mins, secs = divmod(t, 60)
-        # Formats the time as MM:SS
+       
         timer = f'{mins:02d}:{secs:02d}' 
         
-        # \r (Carriage Return) moves the cursor to the beginning of the line
+       
         print(timer, end="\r") 
-        sys.stdout.flush() # Ensures the timer updates immediately
+        sys.stdout.flush() 
 
         time.sleep(1)
         t -= 1
 
-    # After the loop finishes (t is -1), print the final message and clear the line
+    
     print('Tá na hora!             ') 
 
-# --- Main Program Execution ---
 if __name__ == "__main__":
-    while True: # Loop to allow multiple countdowns
+    while True: 
         try:
             t_input = input("Digite o tempo para a contagem regressiva em segundos (ou 'sair' para encerrar): ")
 
@@ -32,7 +31,7 @@ if __name__ == "__main__":
                 print("Contagem regressiva encerrada.")
                 break
             
-            # Convert input to integer and start the countdown
+            
             seconds = int(t_input)
             if seconds < 0:
                 print("O tempo deve ser um número positivo.")
